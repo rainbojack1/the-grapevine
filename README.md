@@ -14,6 +14,7 @@ A web app that lets users view and leave comments on the latest news.
 
    6. heroku
         **NOTE** In order to deploy your project to Heroku, you must set up an mLab provision. mLab is remote MongoDB database that Heroku supports natively.
+        <!-- https://heardit-on-the-grapevine.herokuapp.com/  -->
 
 ## Instructions
 
