@@ -35,7 +35,7 @@ app.listen(PORT, function() {
   console.log("App running on port " + PORT + "!");
 });
 
-//GET route to scrape HackerNews
+// GET route to scrape Google News
 app.get("/scrape", function(req, res) {
   axios
     .get("https://news.google.com/?hl=en-US&gl=US&ceid=US:en")
@@ -62,10 +62,21 @@ app.get("/scrape", function(req, res) {
           console.log(dbArticle);
         })
         .catch(function(err){
-          console.log(err);
+          console.log("There was a problem saving the scraped articles.\n", err);
         });
       });
 
       res.send("Your news has been scraped!");
     });
+});
+
+// GET route to retrieve all articles from db
+app.get("/articles", function(req, res){
+  db.Article.find({})
+  .then(function(dbArticle){
+    res.json(dbArticle);
+  })
+  .catch(function(err){
+    res.json("There was an error retrieving the articles. \n", err);
+  })
 });
