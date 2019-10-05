@@ -4,10 +4,13 @@ var mongoose = require("mongoose");
 var axios = require("axios");
 var cheerio = require("cheerio");
 
+//Require .env file
+require("dotenv").config();
+
 // Require all models
 var db = require("./models");
 
-var PORT =  process.env.PORT || 3000;
+var PORT = process.env.PORT || 3000;
 
 // Initialize Express
 var app = express();
@@ -23,10 +26,35 @@ app.use(express.json());
 app.use(express.static("public"));
 
 // Connect to the Mongo DB
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
+var MONGODB_URI =
+  process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 
 // Start the server
 app.listen(PORT, function() {
-    console.log("App running on port " + PORT + "!");
-  });
+  console.log("App running on port " + PORT + "!");
+});
+
+//GET route to scrape HackerNews
+app.get("/scrape", function(req, res) {
+  axios
+    .get("https://news.google.com/?hl=en-US&gl=US&ceid=US:en")
+    .then(function(response) {
+      var $ = cheerio.load(response.data);
+
+      $("article h3").each(function(i, element) {
+        // Save an empty result object
+        var result = {};
+
+        // Add the text and href of every link, and save them as properties of the result object
+        result.title = $(this)
+          .children("a")
+          .text();
+        result.link = $(this)
+          .children("a")
+          .attr("href");
+
+        // console.log("Result: ", result);
+      });
+    });
+});
