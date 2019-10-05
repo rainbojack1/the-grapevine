@@ -24,14 +24,23 @@ router.get("/", function(req, res){
 
 // GET route to scrape Google News
 router.get("/scrape", function(req, res) {
+    // Save an empty result object
+    var result = {};
+    
     axios
       .get("https://news.google.com/?hl=en-US&gl=US&ceid=US:en")
       .then(function(response) {
         var $ = cheerio.load(response.data);
   
-        $("article h3").each(function(i, element) {
-          // Save an empty result object
-          var result = {};
+        $("article .QmrVtf .SVJrMe").each(function(i, element) {
+          
+            // Add the text and href of every link, and save them as properties of the result object
+            result.srcName = $(this)
+              .children("a")
+              .text();            
+          });
+
+        $("article h3").each(function(i, element) {         
   
           // Add the text and href of every link, and save them as properties of the result object
           result.title = $(this)
@@ -40,8 +49,6 @@ router.get("/scrape", function(req, res) {
           result.link = $(this)
             .children("a")
             .attr("href");
-  
-          // console.log("Result: ", result);
   
           // Create a new Article from each response element
           db.Article.create(result)

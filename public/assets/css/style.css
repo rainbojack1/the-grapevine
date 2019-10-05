@@ -2,6 +2,14 @@ body {
     background-image: url("../img/email-pattern.png");
 }
 
+/* h2 {
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+} */
+
+p, a {
+    font-size: 22px;
+}
+
 .center {
     margin: 0 auto;
     text-align: center;
@@ -9,10 +17,6 @@ body {
 
 .inl-blk {
     display: inline-block;
-}
-
-p {
-    font-size: 22px;
 }
 
 .jumbotron {
@@ -44,5 +48,10 @@ p {
 }
 
 .underline {
-    text-decoration: underline;
+    /* text-decoration: underline; */
+    border-bottom: 1px solid;
+}
+
+#subhead {
+    font-size: 2.5rem !important;
 }

@@ -19,12 +19,14 @@
     <img id="grapes-right" src="/assets/img/kisspng-grape-vine-wine.png">
 </div> 
 <div class="content mx-5">
-    <h2 class="center underline mb-2">Current Articles</h2>
+    <h2 class="center underline mb-2 display-4" id="subhead">Current Articles</h2>
     <div class="center" id="articles">
         {{#each articles}}
-            <p data-id={{this._id}}>
-                <a href="{{this.link}}" alt="link to article">{{this.title}}</a> 
-            </p>
+            <div data-id={{this._id}} class="mb-3">
+                <p class="mb-0">{{this.title}} <br/> <small>From {{this.srcName}}</small></p>
+                {{!-- There is no summary so I'm including the Source Name --}}
+                <a href="{{this.link}}" alt="link to article" target="_blank"><i class="fas fa-external-link-alt"></i> Read the article</a> 
+            </div>
         {{/each}}
     </div>
       <div id="comments"></div>
