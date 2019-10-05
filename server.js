@@ -55,6 +55,17 @@ app.get("/scrape", function(req, res) {
           .attr("href");
 
         // console.log("Result: ", result);
+
+        // Create a new Article from each response element
+        db.Article.create(result)
+        .then(function(dbArticle) {
+          console.log(dbArticle);
+        })
+        .catch(function(err){
+          console.log(err);
+        });
       });
+
+      res.send("Your news has been scraped!");
     });
 });
