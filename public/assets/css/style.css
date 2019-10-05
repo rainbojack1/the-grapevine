@@ -1,0 +1,48 @@
+body {
+    background-image: url("../img/email-pattern.png");
+}
+
+.center {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.inl-blk {
+    display: inline-block;
+}
+
+p {
+    font-size: 22px;
+}
+
+.jumbotron {
+    background-color: transparent !important;
+}
+
+#grapes {
+    position: relative;
+    z-index: -1;
+}
+
+#grapes img {
+    position: relative;
+    /* z-index: -1; */
+    bottom: 277px;
+    width: 34%;
+}
+
+#grapes-right {
+    float: right;
+    transform: scaleX(-1);
+}
+
+.content {
+    position: relative;
+    top: -480px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.underline {
+    text-decoration: underline;
+}

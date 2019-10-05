@@ -1,0 +1,31 @@
+{{!-- <header class="center">
+    <h1>The Grapevine</h1>
+    <h3>Tell them you heard it here!</h3>
+</header>
+<div class="center" id="grapes">
+    <img src="/assets/img/kisspng-grape-vine-wine.png">
+</div>
+
+</div> --}}
+
+<div class="jumbotron jumbotron-fluid">      
+  <div class="container center">           
+    <h1 class="display-4">The Grapevine</h1>
+    <p class="lead">Tell them you heard it here!</p>
+  </div>
+</div>
+<div id="grapes">
+    <img id="grapes-left" src="/assets/img/kisspng-grape-vine-wine.png">
+    <img id="grapes-right" src="/assets/img/kisspng-grape-vine-wine.png">
+</div> 
+<div class="content mx-5">
+    <h2 class="center underline mb-2">Current Articles</h2>
+    <div class="center" id="articles">
+        {{#each articles}}
+            <p data-id={{this._id}}>
+                <a href="{{this.link}}" alt="link to article">{{this.title}}</a> 
+            </p>
+        {{/each}}
+    </div>
+      <div id="comments"></div>
+</div>
