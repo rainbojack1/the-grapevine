@@ -2,10 +2,6 @@ body {
     background-image: url("../img/email-pattern.png");
 }
 
-/* h2 {
-    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-} */
-
 p, a {
     font-size: 22px;
 }
@@ -19,12 +15,27 @@ textarea {
     text-align: center;
 }
 
-.inl-blk {
-    display: inline-block;
+.lead {
+    font-size: 1.5rem !important;
+    font-style: italic;
 }
 
 .jumbotron {
     background-color: transparent !important;
+}
+
+.content {
+    position: absolute;
+    top: 325px;
+    left: 10%;
+    padding-left: 100px;
+    padding-right: 100px;
+    width: 80%;
+}
+
+.underline {
+    /* text-decoration: underline; */
+    border-bottom: 1px solid;
 }
 
 #grapes {
@@ -44,18 +55,19 @@ textarea {
     transform: scaleX(-1);
 }
 
-.content {
-    position: relative;
-    top: -480px;
-    padding-left: 100px;
-    padding-right: 100px;
-}
-
-.underline {
-    /* text-decoration: underline; */
-    border-bottom: 1px solid;
-}
-
 #subhead {
     font-size: 2.5rem !important;
+    width: fit-content;
+}
+
+@media screen and (max-width: 480px) { 
+    .content {
+        top: 200px;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    #subhead {
+        font-size: 2rem !important;
+    }
 }
