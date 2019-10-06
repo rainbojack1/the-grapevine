@@ -24,7 +24,7 @@ A web app that lets users view and leave comments on the latest news.
 
      * Headline - the title of the article
 
-     * Summary - a short summary of the article
+     * Summary - a short summary of the article (if applicable)
 
      * URL - the url to the original article
 
@@ -32,7 +32,16 @@ A web app that lets users view and leave comments on the latest news.
 
   2. Users should also be able to leave comments on the articles displayed and revisit them later. The comments should be saved to the database as well and associated with their articles. Users should also be able to delete comments left on articles. All stored comments should be visible to every user.
 
-  ### Helpful Links
+
+## Hints
+* Make sure you use a website that displays articles, not a news api. 
+* Use the inspector on your browser to determine the layout of the data; you want to be a specific as possible when drilling down the scraped data.
+* Check to make sure the url that is being passed is not missing a base url.
+* You may have to do more than one for each loop through the data to get meaningful results. 
+
+
+### Helpful Links
 * [MongoDB Documentation](https://docs.mongodb.com/manual/)
 * [Mongoose Documentation](http://mongoosejs.com/docs/api.html)
 * [Cheerio Documentation](https://github.com/cheeriojs/cheerio)
+* [Deployment Guide](https://devcenter.heroku.com/articles/mongolab)
