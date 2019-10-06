@@ -10,6 +10,10 @@ p, a {
     font-size: 22px;
 }
 
+textarea {
+    width: 100%;
+}
+
 .center {
     margin: 0 auto;
     text-align: center;

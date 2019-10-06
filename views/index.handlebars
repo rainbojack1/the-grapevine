@@ -25,7 +25,7 @@
             <div data-id={{this._id}} class="mb-3">
                 {{!-- There is no summary so I'm including the Source Name --}}
                 <p class="mb-0">{{this.title}} <br/> <small>From {{this.srcName}}</small></p>
-                <p class="mb-0"><a href="#comments" data-toggle="modal" data-target="#comments" id="leaveNote">Click here to leave or read a comment</a></p>
+                <p class="mb-0"><a href="#comments" data-toggle="modal" data-target="#comments" data-id="{{this._id}}" id="leaveNote">Click here to leave or read a comment</a></p>
                 <a href="{{this.link}}" alt="link to article" target="_blank"><i class="fas fa-external-link-alt"></i> Read the article</a> 
             </div>
         {{/each}}
@@ -41,11 +41,11 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <p id="yourComment">Add a comment.</p>
+                    <p id="yourComment"></p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-primary" id="saveBtn" data-dismiss="modal">Save changes</button>
                 </div>
             </div>
         </div>
