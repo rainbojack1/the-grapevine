@@ -1,6 +1,8 @@
 var thisId;
 
 $(document).on("click", "#leaveNote", function() {
+  $("#bodyinput").val("");
+  
   // Save the id from the p tag
   thisId = $(this).attr("data-id");
 
